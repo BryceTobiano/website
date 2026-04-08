@@ -1,0 +1,16 @@
+.wrapper {
+  width: min(100%, calc(100vw - (var(--page-gutter) * 2)));
+  margin-inline: auto;
+}
+
+.narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.content {
+  max-width: var(--max-width-content);
+}
+
+.wide {
+  max-width: var(--max-width-wide);
+}
