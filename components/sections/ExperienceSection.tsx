@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { experiencesType } from "@/lib/site-content";
@@ -15,12 +16,22 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
         {experiences.map((experience) => (
           <article className={styles.item} key={`${experience.role}-${experience.period}`}>
             <div aria-hidden="true" className={styles.icon}>
-              {experience.icon}
+              {experience.icon.type === "image" ? (
+                <Image
+                  alt=""
+                  className={styles.iconImage}
+                  height={20}
+                  width={20}
+                  src={experience.icon.src}
+                />
+              ) : (
+                <span className={styles.iconEmoji}>{experience.icon.symbol}</span>
+              )}
             </div>
             <div className={styles.details}>
               <h3 className={styles.role}>{experience.role}</h3>
               <p className={styles.team}>
-                <span className={styles.dot}>•</span> {experience.team}
+                <span className={styles.dot}>@</span> {experience.team}
               </p>
             </div>
             <p className={styles.period}>{experience.period}</p>

@@ -14,10 +14,46 @@ export type NavGroup = {
   items: NavItem[];
 };
 
+export type HeroSummarySegment =
+  | {
+      text: string;
+      type: "text";
+    }
+  | {
+      href: string;
+      isExternal?: boolean;
+      text: string;
+      type: "link";
+    };
+
 export const heroContent = {
   eyebrow: "Designing systems from silicon to software",
-  summary:
-    "I'm currently interning part-time at Northrop Grumman's Microelectronics Center (NGMC) working on a variety of initiatives such as: developing PDKs, implementing ML defect detection, creating custom tooling software, and more!",
+  summary: [
+    {
+      text: "I'm currently interning part-time at ",
+      type: "text",
+    },
+    {
+      href: "https://www.northropgrumman.com/what-we-do/mission-solutions/microelectronics",
+      isExternal: true,
+      text: "Northrop Grumman's Microelectronics Center (NGMC)",
+      type: "link",
+    },
+    {
+      text: " working on a variety of initiatives such as: developing ",
+      type: "text",
+    },
+    {
+      href: "https://en.wikipedia.org/wiki/Process_design_kit",
+      isExternal: true,
+      text: "PDKs",
+      type: "link",
+    },
+    {
+      text: ", implementing ML defect detection, creating custom tooling software, and more!",
+      type: "text",
+    },
+  ] satisfies HeroSummarySegment[],
 } as const;
 
 export type heroContentType = typeof heroContent;
@@ -44,32 +80,66 @@ export const projects = [
 export type projectType = (typeof projects)[number];
 export type projectsType = typeof projects;
 
-export const experiences = [
+export type ExperienceIcon =
+  | {
+      symbol: string;
+      type: "emoji";
+    }
+  | {
+      alt: string;
+      src: string;
+      type: "image";
+    };
+
+export type ExperienceEntry = {
+  icon: ExperienceIcon;
+  period: string;
+  role: string;
+  team: string;
+};
+
+export const experiences: ExperienceEntry[] = [
   {
-    icon: "🔬",
+    icon: {
+      alt: "Northrop Grumman",
+      src: "/ng.svg",
+      type: "image",
+    },
     period: "2025-Present",
     role: "Technical Intern",
     team: "Northrop Grumman",
   },
   {
-    icon: "💻",
+    icon: {
+      alt: "USC",
+      src: "/usc.svg",
+      type: "image",
+    },
     period: "2024",
     role: "CA Dreams SURF Fellow",
-    team: "Personal Projects",
+    team: "USC John O’Brien Nanofabrication Lab",
   },
   {
-    icon: "🛠️",
+    icon: {
+      alt: "Evidant",
+      src: "/evidant.svg",
+      type: "image",
+    },
     period: "2023",
     role: "Data Science Intern",
     team: "Evidant Corporation",
   },
   {
-    icon: "🔒",
+    icon: {
+      alt: "HackSC",
+      src: "/hacksc.svg",
+      type: "image",
+    },
     period: "2022-2025",
     role: "Software Engineer",
     team: "HackSC",
   },
-] as const;
+];
 
 export type experienceType = (typeof experiences)[number];
 export type experiencesType = typeof experiences;

@@ -38,10 +38,26 @@
 
 .summary {
   margin-top: 0.75rem;
-  max-width: 34ch;
+  max-width: 50ch;
   font-size: clamp(1.05rem, 1.9vw, 1.25rem);
   line-height: 1.45;
   color: var(--color-text-muted);
+}
+
+.summaryLink {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb,  var(--color-text-muted) 70%, transparent);
+  text-underline-offset: 0.15em;
+  transition:
+    color var(--transition-base),
+    text-decoration-color var(--transition-base);
+}
+
+.summaryLink:hover,
+.summaryLink:focus-visible {
+  color: color-mix(in srgb, var(--color-accent) 88%, white);
+  text-decoration-color: currentColor;
 }
 
 @media (max-width: 960px) {

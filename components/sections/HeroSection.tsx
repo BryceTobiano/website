@@ -18,7 +18,25 @@ export function HeroSection({ content }: HeroSectionProps) {
         <Eyebrow accent className={styles.eyebrow}>
           {content.eyebrow}
         </Eyebrow>
-        <p className={styles.summary}>{content.summary}</p>
+        <p className={styles.summary}>
+          {content.summary.map((segment, index) => {
+            if (segment.type === "link") {
+              return (
+                <a
+                  className={styles.summaryLink}
+                  href={segment.href}
+                  key={`${segment.type}-${index}`}
+                  rel={segment.isExternal ? "noreferrer" : undefined}
+                  target={segment.isExternal ? "_blank" : undefined}
+                >
+                  {segment.text}
+                </a>
+              );
+            }
+
+            return <span key={`${segment.type}-${index}`}>{segment.text}</span>;
+          })}
+        </p>
       </div>
     </Section>
   );
