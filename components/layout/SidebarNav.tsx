@@ -102,6 +102,7 @@ export function SidebarNav({ brand, groups }: SidebarNavProps) {
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           className={styles.menuButton}
+          data-testid="mobile-menu-button"
           onClick={() => setIsMenuOpen((current) => !current)}
           type="button"
         >
@@ -113,7 +114,7 @@ export function SidebarNav({ brand, groups }: SidebarNavProps) {
         <a className={styles.brand} href="#top">
           {brand}.
         </a>
-        <nav aria-label="Primary" className={styles.nav}>
+        <nav aria-label="Primary" className={styles.nav} data-testid="desktop-nav">
           {groups.map((group) => (
             <div
               className={styles.group}
@@ -144,13 +145,19 @@ export function SidebarNav({ brand, groups }: SidebarNavProps) {
             <button
               aria-label="Close navigation menu"
               className={styles.menuButton}
+              data-testid="mobile-menu-close-button"
               onClick={() => setIsMenuOpen(false)}
               type="button"
             >
               <span className={`${styles.menuIcon} ${styles.menuIconOpen}`} />
             </button>
           </div>
-          <nav aria-label="Mobile primary" className={styles.mobileMenu} id="mobile-site-menu">
+          <nav
+            aria-label="Mobile primary"
+            className={styles.mobileMenu}
+            data-testid="mobile-nav"
+            id="mobile-site-menu"
+          >
             {mobileItems.map((item) => (
               <NavItem
                 href={item.href}

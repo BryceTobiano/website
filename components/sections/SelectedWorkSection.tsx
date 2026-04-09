@@ -13,6 +13,7 @@ export function SelectedWorkSection({ projects }: SelectedWorkSectionProps) {
     <Section
       aria-labelledby="selected-work-title"
       className={styles.section}
+      data-testid="selected-work-section"
       id="featured"
       size="content"
     >

@@ -9,10 +9,16 @@ type HeroSectionProps = {
 
 export function HeroSection({ content }: HeroSectionProps) {
   return (
-    <Section aria-labelledby="hero-title" className={styles.section} id="about" size="narrow">
+    <Section
+      aria-labelledby="hero-title"
+      className={styles.section}
+      data-testid="hero-section"
+      id="about"
+      size="narrow"
+    >
       <div className={`${styles.inner} reveal-stagger`}>
-        <p className={`${styles.greeting} page-enter`} >Hello,</p>
-        <h1 className={`${styles.title} page-enter`} id="hero-title">
+        <p className={`${styles.greeting} page-enter`}>Hello,</p>
+        <h1 className={`${styles.title} page-enter`} data-testid="hero-title" id="hero-title">
           I&apos;m Bryce
         </h1>
         <Eyebrow accent className={`${styles.eyebrow} page-enter`}>

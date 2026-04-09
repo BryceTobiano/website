@@ -14,6 +14,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
     <Section
       aria-labelledby="experience-title"
       className={`${styles.section} page-enter`}
+      data-testid="experience-section"
       id="experience"
       size="content"
       style={{ "--page-enter-delay": "600ms" } as CSSProperties}
@@ -24,6 +25,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
           <article
             className={styles.item}
             data-reveal="fade-up"
+            data-testid={`experience-item-${index}`}
             key={`${experience.role}-${experience.period}`}
             style={{ "--reveal-delay": `${index * 70}ms` } as CSSProperties}
           >

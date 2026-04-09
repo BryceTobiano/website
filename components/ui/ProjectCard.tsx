@@ -13,6 +13,7 @@ export function ProjectCard({ project, revealDelay }: ProjectCardProps) {
     <article
       className={styles.card}
       data-reveal="fade-up"
+      data-testid={`project-card-${project.slug}`}
       id={`project-${project.slug}`}
       style={revealDelay ? ({ "--reveal-delay": revealDelay } as CSSProperties) : undefined}
     >

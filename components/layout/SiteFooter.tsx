@@ -6,7 +6,7 @@ type SiteFooterProps = {
 
 export function SiteFooter({ quote }: SiteFooterProps) {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-testid="site-footer">
       <div className={styles.inner}>
         <p className={styles.quote}>{quote}</p>
       </div>
