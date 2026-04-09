@@ -1,14 +1,21 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import type { projectType } from "@/lib/site-content";
 import styles from "@/styles/ui/ProjectCard.module.css";
 
 type ProjectCardProps = {
   project: projectType;
+  revealDelay?: string;
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, revealDelay }: ProjectCardProps) {
   return (
-    <article className={styles.card} id={`project-${project.slug}`}>
+    <article
+      className={styles.card}
+      data-reveal="fade-up"
+      id={`project-${project.slug}`}
+      style={revealDelay ? ({ "--reveal-delay": revealDelay } as CSSProperties) : undefined}
+    >
       <div className={styles.preview}>
         <Image
           alt={project.imageAlt}

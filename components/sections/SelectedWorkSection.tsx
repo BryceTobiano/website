@@ -17,9 +17,13 @@ export function SelectedWorkSection({ projects }: SelectedWorkSectionProps) {
       size="content"
     >
       <SectionHeading eyebrow="Featured" hiddenTitle id="selected-work-title" title="Featured" />
-      <div className={styles.grid}>
-        {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+      <div className={`${styles.grid} reveal-stagger`}>
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.slug}
+            project={project}
+            revealDelay={`${index * 90}ms`}
+          />
         ))}
       </div>
     </Section>

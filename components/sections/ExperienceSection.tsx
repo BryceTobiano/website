@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -10,11 +11,22 @@ type ExperienceSectionProps = {
 
 export function ExperienceSection({ experiences }: ExperienceSectionProps) {
   return (
-    <Section aria-labelledby="experience-title" className={styles.section} id="experience" size="content">
+    <Section
+      aria-labelledby="experience-title"
+      className={`${styles.section} page-enter`}
+      id="experience"
+      size="content"
+      style={{ "--page-enter-delay": "600ms" } as CSSProperties}
+    >
       <SectionHeading eyebrow="Experience" hiddenTitle id="experience-title" title="Experience" />
-      <div className={styles.list}>
-        {experiences.map((experience) => (
-          <article className={styles.item} key={`${experience.role}-${experience.period}`}>
+      <div className={`${styles.list} reveal-stagger`}>
+        {experiences.map((experience, index) => (
+          <article
+            className={styles.item}
+            data-reveal="fade-up"
+            key={`${experience.role}-${experience.period}`}
+            style={{ "--reveal-delay": `${index * 70}ms` } as CSSProperties}
+          >
             <div aria-hidden="true" className={styles.icon}>
               {experience.icon.type === "image" ? (
                 <Image

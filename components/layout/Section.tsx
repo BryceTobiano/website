@@ -1,30 +1,23 @@
-import type { ElementType, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 import { MaxWidth } from "@/components/layout/MaxWidth";
 import styles from "@/styles/layout/Section.module.css";
 
 type SectionProps = {
-  "aria-labelledby"?: string;
   as?: ElementType;
   children: ReactNode;
   className?: string;
-  id?: string;
   size?: "narrow" | "content" | "wide";
-};
+} & Omit<ComponentPropsWithoutRef<"section">, "children" | "className">;
 
 export function Section({
-  "aria-labelledby": ariaLabelledBy,
   as: Tag = "section",
   children,
   className,
-  id,
   size = "content",
+  ...rest
 }: SectionProps) {
   return (
-    <Tag
-      aria-labelledby={ariaLabelledBy}
-      className={[styles.section, className].filter(Boolean).join(" ")}
-      id={id}
-    >
+    <Tag className={[styles.section, className].filter(Boolean).join(" ")} {...rest}>
       <MaxWidth size={size}>{children}</MaxWidth>
     </Tag>
   );

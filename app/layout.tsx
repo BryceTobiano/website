@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { ScrollReveal } from "@/components/providers/ScrollReveal";
 import { IBM_Plex_Mono, Inter, Work_Sans } from "next/font/google";
 import "./globals.css";
+import "@/styles/animations.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -51,7 +53,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${workSans.variable} ${ibmPlexMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <ScrollReveal />
+        {children}
+      </body>
     </html>
   );
 }

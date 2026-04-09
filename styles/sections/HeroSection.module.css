@@ -6,7 +6,6 @@
 }
 
 .inner {
-  animation: fadeUp 700ms var(--transition-slow) both;
 }
 
 .greeting,
