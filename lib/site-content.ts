@@ -30,7 +30,7 @@ export const heroContent = {
   eyebrow: "Designing systems from silicon to software",
   summary: [
     {
-      text: "I'm currently interning part-time at ",
+      text: "I'm currently interning at ",
       type: "text",
     },
     {
@@ -60,20 +60,22 @@ export type heroContentType = typeof heroContent;
 
 export const projects = [
   {
-    slug: "semiconductor-research",
-    title: "Semiconductor Research",
-    category: "Research",
-    year: "2024",
-    gradient:
-      "linear-gradient(151deg, rgb(152 16 250) 0%, rgb(21 93 252) 100%)",
+    slug: "fpga-cnn",
+    description:
+      "Training and testing a neural network to identify handwritten digits on the MNIST dataset.",
+    imageAlt: "Thumbnail preview for the CNN on an FPGA project",
+    imageSrc: "/thumbnails/tb_fpga_cnn.png",
+    title: "CNN on an FPGA",
+    year: "2025",
   },
   {
-    slug: "web-application",
-    title: "Web Application",
-    category: "Development",
+    slug: "firing-frenzy",
+    description:
+      "A fun little game using a Nexys 4 FPGA and its built-in Analog ADXL362 accelerometer",
+    imageAlt: "Thumbnail preview for the Firing Frenzy project",
+    imageSrc: "/thumbnails/tb_firing_frenzy.png",
+    title: "Firing Frenzy: An FPGA Game",
     year: "2024",
-    gradient:
-      "linear-gradient(151deg, rgb(0 184 219) 0%, rgb(20 71 230) 100%)",
   },
 ] as const;
 
@@ -102,7 +104,7 @@ export const experiences: ExperienceEntry[] = [
   {
     icon: {
       alt: "Northrop Grumman",
-      src: "/ng.svg",
+      src: "/experience/ng.svg",
       type: "image",
     },
     period: "2025-Present",
@@ -112,7 +114,7 @@ export const experiences: ExperienceEntry[] = [
   {
     icon: {
       alt: "USC",
-      src: "/usc.svg",
+      src: "/experience/usc.svg",
       type: "image",
     },
     period: "2024",
@@ -122,7 +124,7 @@ export const experiences: ExperienceEntry[] = [
   {
     icon: {
       alt: "Evidant",
-      src: "/evidant.svg",
+      src: "/experience/evidant.svg",
       type: "image",
     },
     period: "2023",
@@ -132,7 +134,7 @@ export const experiences: ExperienceEntry[] = [
   {
     icon: {
       alt: "HackSC",
-      src: "/hacksc.svg",
+      src: "/experience/hacksc.svg",
       type: "image",
     },
     period: "2022-2025",

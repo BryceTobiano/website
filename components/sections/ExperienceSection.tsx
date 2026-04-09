@@ -18,7 +18,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
             <div aria-hidden="true" className={styles.icon}>
               {experience.icon.type === "image" ? (
                 <Image
-                  alt=""
+                  alt={experience.icon.alt}
                   className={styles.iconImage}
                   height={20}
                   width={20}

@@ -6,8 +6,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2.25rem;
-  padding: 1.5rem 1rem 1.5rem 1.125rem;
+  gap: 3rem;
+  padding: 2rem 1.5rem 2rem 1.5rem;
 }
 
 .mobileBar {
@@ -64,7 +64,7 @@
 
 .brand {
   font-family: var(--font-heading), "Inter", sans-serif;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.3;
   color: var(--color-text);
@@ -151,13 +151,13 @@
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .group {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
+  gap: 0.875rem;
 }
 
 .groupLabel {
@@ -173,13 +173,13 @@
 .items {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.875rem;
 }
 
 .link,
 .placeholder {
-  font-size: 0.75rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.45;
   color: var(--color-text);
 }
 
@@ -219,5 +219,9 @@
 
   .mobileBar {
     display: flex;
+  }
+
+  .brand {
+    font-size: 1rem;
   }
 }

@@ -6,6 +6,7 @@
 }
 
 .preview {
+  position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -26,7 +27,14 @@
   pointer-events: none;
 }
 
-.category,
+.previewImage {
+  object-fit: cover;
+  transition:
+    transform var(--transition-slow),
+    filter var(--transition-slow);
+}
+
+.description,
 .year {
   margin: 0;
 }
@@ -51,10 +59,10 @@
   line-height: 1.4;
 }
 
-.category,
+.description,
 .year {
   font-family: var(--font-mono), "IBM Plex Mono", monospace;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   line-height: 1rem;
   color: var(--color-text-muted);
 }
@@ -65,6 +73,11 @@
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     0 18px 36px rgba(0, 0, 0, 0.24);
+}
+
+.card:hover .previewImage,
+.card:focus-within .previewImage {
+  transform: scale(1.03);
   filter: saturate(1.06);
 }
 
